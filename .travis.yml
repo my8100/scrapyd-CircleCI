@@ -18,6 +18,16 @@ script:
     - coverage erase
     - coverage run --branch bin/trial scrapyd
     - coverage report
+    
+    - cd ~
+    - printf "[scrapyd]\nusername = hello12345\npassword = 67890world\n" > scrapyd.conf
+    - cat scrapyd.conf
+    - nohup ~/repo/venv/bin/scrapyd > ~/scrapyd.log 2>&1 &
+    - sleep 5
+    - cat ~/scrapyd.log
+    - cd -
+    - coverage erase
+    - coverage run --source=scrapyd -m pytest tests -s -vv -l --disable-warnings
 
 after_success:
     - codecov
