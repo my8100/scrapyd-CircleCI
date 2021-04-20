@@ -12,7 +12,7 @@ before_install:
     - pip install -U pip wheel setuptools codecov
 
 install:
-    - pip install -rreqs/requirements-latest.txt -rreqs/requirements-tests.txt
+    - pip install -r reqs/requirements-latest.txt -r reqs/requirements-tests.txt
 
 script:
     - coverage erase
@@ -22,9 +22,9 @@ script:
 after_success:
     - codecov
 
-notifications:
-    irc:
-        channels:
-            - "irc.freenode.org#scrapy"
-        use_notice: true
-        skip_join: true
+#notifications:
+    #irc:
+        #channels:
+            #- "irc.freenode.org#scrapy"
+        #use_notice: true
+        #skip_join: true
