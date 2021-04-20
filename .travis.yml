@@ -26,6 +26,7 @@ script:
     - sleep 5
     - cat ~/scrapyd.log
     - cd -
+    
     - coverage erase
     - coverage run --source=scrapyd -m pytest tests -s -vv -l --disable-warnings
 
