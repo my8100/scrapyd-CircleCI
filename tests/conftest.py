@@ -2,8 +2,6 @@
 import pytest
 import requests
 
-import scrapyd
-
 
 @pytest.fixture
 def fixture():
