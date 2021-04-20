@@ -17,6 +17,7 @@ from .basicauth import PublicHTMLRealm, StringCredentialsChecker
 
 
 def create_wrapped_resource(webcls, config, app):
+    assert False
     username = config.get('username', '')
     password = config.get('password', '')
     if ':' in username:
